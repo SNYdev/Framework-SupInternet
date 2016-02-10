@@ -22,6 +22,7 @@ class Routing
         $this->ymlFile = $tabRoute;
         $request = $_SERVER['SCRIPT_NAME'];
         $uri = $_SERVER['REQUEST_URI'];
+        Logs::accessLogs($uri);
         $req = str_replace("index.php", "", $request);
         $uri = str_replace($req, "", $uri);
         foreach ($tabRoute as $k) {
@@ -31,7 +32,9 @@ class Routing
                 $this->viewController = $k['view'];
                 break;
             } else {
-                
+              $error = "route introuvable";
+              Logs::errorLog($error);
+
             }
         }
     }

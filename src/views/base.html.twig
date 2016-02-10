@@ -2,18 +2,43 @@
 <html>
     <head>
         {% block head %}
-            <link rel="stylesheet" href="src/css/base.css" />
-            <title>{% block title %}{% endblock %} - My Webpage</title>
-        {% endblock %}
-        {% block jshead %}
+        <link rel="stylesheet" href="src/css/reset.css" />
+        <link rel="stylesheet" href="src/css/base.css" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,900,700,500' rel='stylesheet' type='text/css'>
+        <title>{% block title %}Framework Yanis{% endblock %} - My Webpage</title>
         {% endblock %}
     </head>
     <body>
-        <nav>{% block nav %}{% endblock %}</nav>
-        <div id="content">{% block content %}{% endblock %}</div>
+        <nav>
+          <ul>
+            <li><a href="">Accueil</a></li>
+            <li><a href="ok">Content</a></li>
+            <li><a href="info">Information</a></li>
+          </ul>{% block nav %}{% endblock %}
+        </nav>
+        <div class="informations">
+          <div id="wrapperBlockInfo">
+            <h1 class="titleInfo" id="firstBlock">Utiliser la console</h1>
+            <div class="backgroundTextInfo" id="longBTI">
+              <p class="textInfo" id="pInfo"> use PHP generateFiles.php $RouteArrayName $pathName</p>
+            </div>
+            <h1 class="titleInfo">Fonctionnement manuel</h1>
+            <div class="backgroundTextInfo">
+              <p class="textInfo" id="Itext"> -> Creer une route sur le routeur yml avec la syntaxe indique</p><br>
+              <p class="textInfo"> -> Creer une page model avec le nom du path</p><br>
+              <p class="textInfo"> -> Creer une page views avec le nom du path</p><br>
+            </div>
+            <h1 class="titleInfo">Logs</h1>
+            <div class="backgroundTextInfo">
+              <p class="textInfo" id="Itext"> fichiers logs : </p><br>
+              <p class="textInfo"> -> log/access.txt </p><br>
+              <p class="textInfo"> -> log/error.txt </p><br>
+            </div>
+          </div>
+        </div>
         <div id="footer">
             {% block footer %}
-                &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
+                &copy; Copyright 2011 by <a href="http://domain.invalid/">Yanis</a>.
             {% endblock %}
         </div>
     </body>

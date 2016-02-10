@@ -1,14 +1,9 @@
-maroute:
-    path: "search"
-    controller: "src:model:model"
-    view: "src:views:view"
+index:
+    path: ""
+    controller: "src:model:base"
+    view: "src:views:base"
 
-pageVideos:
-    path: "test"
-    controller: "src:model:video"
-    view: "src:views:video"
-
-route3:
-    path: "video"
-    controller: "src:model:model"
-    view: "src:views:views"
+information:
+    path: "info"
+    controller: "src:model:info"
+    view: "src:views:info"

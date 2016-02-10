@@ -6,6 +6,11 @@
       "composer/composer": "1.0.*@dev",
       "symfony/finder": "*",
       "symfony/http-foundation": "~2.8|~3.0",
-      "twig/twig": "~1.0"
+      "twig/twig": "~1.0",
+      "phpdocumentor/graphviz": "~1.0",
+      "phpdocumentor/fileset": "~1.0",
+      "phpdocumentor/reflection": "~1.0",
+      "phpdocumentor/reflection-docblock": "~2.0",
+      "phpdocumentor/phpdocumentor":"2.*"
   }
 }

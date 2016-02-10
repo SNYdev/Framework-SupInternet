@@ -2,18 +2,17 @@
 
 class Logs{
 
-  public function accessLogs($requestUri){
+  static function accessLogs($requestUri){
     $date = date("Y-m-d H:i:s");
     $access = fopen("log/accessLogs.txt", "a+");
-    fwrite($access, $line);
+    fwrite($access, $date.'->'.$requestUri."\n");
     fclose($access);
   }
 
-  public function errorLog($errorTest){
+  static function errorLog($errorTest){
       $date = date("Y-m-d H:i:s");
-      $error = $errorTest->errorInfo();
-      $errorLoad = fopen("log/errorLog", "a+");
-      fwrite($errorLoad, $date."->".$error.'<br>');
+      $errorLoad = fopen("log/errorLog.txt", "a+");
+      fwrite($errorLoad, $date."->".$errorTest."\n");
       fclose($errorLoad);
   }
 }

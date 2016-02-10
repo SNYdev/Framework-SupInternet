@@ -13,14 +13,12 @@ class Controller {
       $this->setModelRoute($arg2);
       $this->setViewRoute($arg3);
       $pathController = $this->getModelRoute().".php";
-      var_dump($pathController);
+      $viewControll = $this->getViewRoute().".html.twig";
       if (file_exists($pathController)) {
           $tes = require_once($pathController);
-          var_dump($tes);
       } else {
-          echo "Controller not found file";
+          $error = "Controller not found file";
       }
-      echo '<br>'.$this->path.'<br>'.$this->modelRoute.'<br>'.$this->viewRoute;
   }
 
   public function setPath($path){
@@ -49,13 +47,11 @@ class Controller {
       return $this->viewRoute;
   }
 
-  public function load(){
-      $viewFormat = $this->viewRoute.'.html.twig';
-      $viewFile = str_replace("src/", "", $viewFormat);
-      if (file_exists($viewFormat)) {
-
-      } else {
-          echo "no";
-      }
+  public function load($tabArg = []){
+      $loader = new Twig_Loader_Filesystem('src/views/');
+      $twig = new Twig_Environment($loader, array('cache' => false));
+      $responseView = str_replace("src/views/", "", $this->getViewRoute());
+      $template = $twig->loadTemplate($responseView.'.html.twig');
+      echo $template->render(array($tabArg));
   }
 }
