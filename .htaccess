@@ -1,3 +1,3 @@
 RewriteEngine On
-RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png|ttf)$ [NC]
 RewriteRule .* index.php
